@@ -11,7 +11,7 @@ import (
 
 func newFileInfo(name string, mode fs.FileMode, modTime time.Time, size int64, sys any) *fileInfo {
 	info := &fileInfo{name: name}
-	if s := sys.(*syscall.Stat_t); s != nil {
+	if s, _ := sys.(*syscall.Stat_t); s != nil {
 		info.stat = *s
 	}
 	if mode != 0 {
