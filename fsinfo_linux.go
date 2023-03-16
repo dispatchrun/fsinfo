@@ -31,7 +31,7 @@ func statIno(stat *syscall.Stat_t) uint64 {
 }
 
 func statNlink(stat *syscall.Stat_t) uint64 {
-	return stat.Nlink
+	return uint64(stat.Nlink)
 }
 
 func statDev(stat *syscall.Stat_t) uint64 {
